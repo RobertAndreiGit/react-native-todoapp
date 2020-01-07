@@ -8,7 +8,7 @@ export default function TodoItem({ item, pressHandler }){
                 {item.task}
             </Text>
             <Text style={styles.subtitle}>
-                {item.description}
+                {item.status}
             </Text>
         </TouchableOpacity>
     )

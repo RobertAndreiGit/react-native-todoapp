@@ -4,11 +4,11 @@ import Modal from "react-native-modal"
 
 export default function EditTodo({ deleteHandler, editHandler , todoVisibility, backdropPress, item, setItem }){
     const changeHandlerTask = (val) => {
-        setItem({task: val, description: item.description, key:item.key})
+        setItem({task: val, status: item.status, id:item.id, user:item.user})
     }
 
     const changeHandlerDescription = (val) => {
-        setItem({task: item.task, description: val, key:item.key})
+        setItem({task: item.task, status: val, id:item.id,user:item.user})
     }
 
     function handleEditPress() {
@@ -16,7 +16,7 @@ export default function EditTodo({ deleteHandler, editHandler , todoVisibility, 
     }
 
     function handleDeletePress() {
-        deleteHandler(item.key);
+        deleteHandler(item.id);
     }
 
     return(
@@ -34,7 +34,7 @@ export default function EditTodo({ deleteHandler, editHandler , todoVisibility, 
                         />
                           
                         <TextInput
-                            value={item.description}
+                            value={item.status}
                             stlye={styles.input}
                             onChangeText={changeHandlerDescription}
                         />
